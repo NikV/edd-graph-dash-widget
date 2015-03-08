@@ -38,9 +38,11 @@ class EDD_Graph_Dash_Widget {
 
 
 }
-function edd_graph_widget_check_edd() {
-	if( ! class_exists( 'Easy_Digital_Downloads' ) ) {
+
+function EDD_graph_widget_load() {
+	if( class_exists( 'Easy_Digital_Downloads' ) ) {
 
 		new EDD_Graph_Dash_Widget();
 	}
 }
+add_action( 'plugins_loaded', 'EDD_graph_widget_load' );
